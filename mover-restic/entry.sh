@@ -20,8 +20,13 @@ fi
 
 # Force the associated backup host name to be "volsync"
 RESTIC_HOST="volsync"
+if [[ -n "${RESTIC_HOST}" ]]; then
+    echo "Using host ${RESTIC_HOST} "
+    RESTIC_HOST=${RESTIC_HOST}
+fi
+
 # Make restic output progress reports every 10s
-export RESTIC_PROGRESS_FPS=1.0
+#export RESTIC_PROGRESS_FPS=1.0
 
 # Print an error message and exit
 # error rc "message"
