@@ -26,7 +26,7 @@ if [[ -n "${RESTIC_HOST}" ]]; then
 fi
 
 # Make restic output progress reports every 10s
-#export RESTIC_PROGRESS_FPS=1.0
+export RESTIC_PROGRESS_FPS=0.01
 
 # Print an error message and exit
 # error rc "message"
