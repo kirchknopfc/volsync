@@ -19,14 +19,14 @@ fi
 "${RESTIC[@]}" version
 
 # Force the associated backup host name to be "volsync"
-RESTIC_HOST="volsync"
+RESTIC_HOST="sicherungsoperator"
 if [[ -n "${RESTIC_HOST}" ]]; then
     echo "Using host ${RESTIC_HOST} "
     RESTIC_HOST=${RESTIC_HOST}
 fi
 
 # Make restic output progress reports every 10s
-export RESTIC_PROGRESS_FPS=0.02
+#export RESTIC_PROGRESS_FPS=0.02
 # 0.2 =  5  sec
 # 0.1 =  10 sec
 # 0.05 = 20 sec
