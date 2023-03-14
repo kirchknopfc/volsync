@@ -82,7 +82,7 @@ function do_backup {
         echo "Using TAG: ${RESTIC_TAG}."
         TAG="--tag ${RESTIC_TAG}"
     fi
-    "${RESTIC[@]}" backup ${TAG} --host "${RESTIC_HOST}" .
+    "${RESTIC[@]}" backup ${TAG} --ignore-inode --exclude=".snapshot/**"  --host "${RESTIC_HOST}" .
     popd
 }
 
