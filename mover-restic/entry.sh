@@ -85,8 +85,9 @@ function do_backup {
 }
 
 function do_forget {
-    echo "=== Starting forget ==="
+    
     if [[ -n ${FORGET_OPTIONS} ]]; then
+        echo "=== Starting forget ==="
         #shellcheck disable=SC2086
         "${RESTIC[@]}" forget --host "${RESTIC_HOST}" ${FORGET_OPTIONS}
     fi
