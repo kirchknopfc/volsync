@@ -2,7 +2,7 @@
 # sleep forever
 # sleep 9999999999
 
-echo "Starting container"
+#echo "Starting container"
 
 set -e -o pipefail
 
@@ -17,13 +17,11 @@ if [[ -n "${CUSTOM_CA}" ]]; then
 fi
 
 "${RESTIC[@]}" version
-
-# Force the associated backup host name to be "volsync"
-RESTIC_HOST="sicherungsoperator"
-if [[ -n "${RESTIC_HOST}" ]]; then
-    echo "Using host ${RESTIC_HOST} "
-    RESTIC_HOST=${RESTIC_HOST}
+# Force the associated backup host name to be "sicherungsoperator"
+if [[ -z "${RESTIC_HOST}" ]]; then
+    RESTIC_HOST="sicherungsoperator"
 fi
+echo "Using host ${RESTIC_HOST} "
 
 # Make restic output progress reports every 10s
 #export RESTIC_PROGRESS_FPS=0.02
