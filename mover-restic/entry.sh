@@ -55,6 +55,8 @@ function check_contents {
 
 # Ensure the repo has been initialized
 function ensure_initialized {
+    ## sleep 60sec
+    sleep $[ ( $RANDOM % 60 )  + 1 ]s
     echo "== Initialize Dir ======="
     # Try a restic command and capture the rc & output
     outfile=$(mktemp -q)
