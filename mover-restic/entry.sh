@@ -281,7 +281,7 @@ for op in "$@"; do
     esac
 done
 echo "Restic completed in $(( SECONDS - START_TIME ))s"
-sync
+#remove sync
 echo "=== Done ==="
 # sleep forever so that the containers logs can be inspected
 # sleep 9999999
