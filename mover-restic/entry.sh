@@ -82,6 +82,9 @@ function do_backup {
         echo "Using TAG: ${RESTIC_TAG}."
         TAG="--tag ${RESTIC_TAG}"
     fi
+    # create tmp file (Error empty snap)
+    touch .backup.tmp
+    
     "${RESTIC[@]}" backup ${TAG} --ignore-inode --exclude=".snapshot/**"  --host "${RESTIC_HOST}" .
     popd
 }
